@@ -1,0 +1,1010 @@
+{
+  "modifyAclAccess": true,
+  "hidden": false,
+  "parameters": {},
+  "name": "wfautsg-test3",
+  "id": "wfautsg-test3",
+  "description": "This dashboard displays metrics from Windows hosts where Telegraf is being used for system metric collection with Wavefront's output plugin.",
+  "tags": {
+    "customerTags": [
+      "training"
+    ]
+  },
+  "viewsLastDay": 3,
+  "viewsLastWeek": 3,
+  "viewsLastMonth": 3,
+  "acl": {
+    "canView": [],
+    "canModify": [
+      "rnathan+vmware@vmware.com"
+    ]
+  },
+  "dashboardAttributes": null,
+  "customer": "vmware",
+  "url": "wfautsg-test3",
+  "eventFilterType": "BYCHART",
+  "sections": [
+    {
+      "name": "Summary",
+      "id": "wfbmor-1-section-1",
+      "rows": [
+        {
+          "heightFactor": 30,
+          "charts": [
+            {
+              "base": 0,
+              "units": "Servers",
+              "name": "CPU Status Summary",
+              "description": "Total CPU Usage of Server",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "sparkline",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(0,0,0,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "200",
+                "sparklineSize": "NONE",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  1,
+                  3
+                ],
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "OK",
+                  "WARN",
+                  "CRITICAL"
+                ],
+                "sparklineValueTextMapThresholds": [
+                  1,
+                  3
+                ]
+              },
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "source"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "New Query",
+                  "sparklineDisplaySubLabel": "Environment CPU Status (>90%)"
+                },
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 0,
+                  "h": 2,
+                  "w": 6
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "Status Summary",
+                  "query": "default(0,count(highpass(90, at(\"end\", ts(win.cpu.Percent.Processor.Time)))))",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "LAST",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "Servers",
+              "name": "CPU Status Summary",
+              "description": "Total CPU Usage of Server",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "sparkline",
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(0,0,0,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "200",
+                "sparklineSize": "NONE",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  1,
+                  3
+                ],
+                "sparklineValueColorMapApplyTo": "BACKGROUND",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "OK",
+                  "WARN",
+                  "CRITICAL"
+                ],
+                "sparklineValueTextMapThresholds": [
+                  1,
+                  3
+                ]
+              },
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "source"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": true,
+                  "sparklineDisplayLabel": "New Query",
+                  "sparklineDisplaySubLabel": "Environment Memory Status (>90%)"
+                },
+                "dashboardLayout": {
+                  "x": 6,
+                  "y": 0,
+                  "h": 2,
+                  "w": 6
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "Status Summary",
+                  "query": "default(0,count(highpass(90, at(\"end\", ts(mem.used.percent)))))",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "LAST",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 80,
+          "charts": [
+            {
+              "base": 0,
+              "units": "",
+              "name": "Services State Note",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "markdown-widget",
+                "plainMarkdownContent": "#### **Windows Service Status Code**\n**1** - stopped; **2** - starting; **3** - stopping; **4** - running; **5** - continue pending; **6** - pause pending; **7** - paused;\n\n#### **IIS (Web Services) Application Pools Status Code**\n**1** - Uninitialized; **2** - Initialized; **3** - Running; **4** - Disabling; **5** - Disabled,; **6** - Shutdown Pending; **7** - Delete Pending;",
+                "customTags": [
+                  "instance"
+                ],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "windowing": "full",
+                "showHosts": false,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 5,
+                "groupBySource": true,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT"
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "dashboardLayout": {
+                  "x": 0,
+                  "y": 2,
+                  "h": 4,
+                  "w": 12
+                }
+              },
+              "sources": [
+                {
+                  "name": "DB transaction per sec",
+                  "query": "ts(\"sql.server.databases.Transactions.persec\", source=rn2011msql)",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "MEAN",
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        }
+      ],
+      "sectionFilter": null
+    },
+    {
+      "name": "Physical Performance",
+      "id": "wfbmor-1-section-3",
+      "rows": [
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "%",
+              "name": "Total CPU Usage (non-idle)",
+              "description": "Total CPU Usage of Server",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "line",
+                "max": 100,
+                "customTags": [],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "all",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(0,0,0,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BOTTOM",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  50,
+                  70
+                ],
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ],
+                "sparklineValueTextMapThresholds": []
+              },
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": [
+                    "source"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "New Query",
+                  "sparklineDisplaySubLabel": "Total CPU Usage"
+                },
+                "dashboardLayout": {
+                  "h": 5,
+                  "w": 12,
+                  "x": 0,
+                  "y": 0
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "A Clone",
+                  "query": "ts(\"win.cpu.Percent.Processor.Time\", source=\"${host}\" AND dc=\"sg\", instance=\"_Total\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "MEAN",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "%",
+              "name": "Total Memory Usage (%)",
+              "description": "Total Memory Usage of Host",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "line",
+                "customTags": [],
+                "fixedLegendEnabled": true,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "custom",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "invertDynamicLegendHoverControl": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BACKGROUND",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  50,
+                  70
+                ],
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ]
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "Percent",
+                  "sparklineDisplaySubLabel": "Total Memory Usage"
+                },
+                "dashboardLayout": {
+                  "h": 5,
+                  "w": 6,
+                  "x": 0,
+                  "y": 5
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "C Clone 2",
+                  "query": "ts(\"win.mem.Committed.Bytes\", source=\"${host}\" AND dc=\"sg\") / (ts(\"win.mem.Committed.Bytes\", source=\"${host}\" AND dc=\"sg\") + ts(\"win.mem.Available.Bytes\", source=\"${host}\" AND dc=\"sg\")) * 100",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": true,
+              "interpolatePoints": false,
+              "summarization": "LAST",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "%",
+              "name": "Total Memory Usage (GB)",
+              "description": "Total Memory Usage of Host",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "line",
+                "customTags": [],
+                "fixedLegendEnabled": true,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "custom",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "invertDynamicLegendHoverControl": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BACKGROUND",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  50,
+                  70
+                ],
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ]
+              },
+              "chartAttributes": {
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "Percent",
+                  "sparklineDisplaySubLabel": "Total Memory Usage"
+                },
+                "dashboardLayout": {
+                  "h": 5,
+                  "w": 6,
+                  "x": 6,
+                  "y": 5
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "C Clone 2",
+                  "query": "ts(\"win.mem.Committed.Bytes\", source=\"${host}\" AND dc=\"sg\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": true,
+              "interpolatePoints": false,
+              "summarization": "LAST",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "",
+              "name": "Primary (\"C\") Disk Free GB & %",
+              "description": "Total Disk Used for Host",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "table",
+                "customTags": [
+                  "instance"
+                ],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "custom",
+                "numTags": 4,
+                "groupBySource": true,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": true,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": true,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BOTTOM",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  50,
+                  70
+                ],
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ]
+              },
+              "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "source",
+                    "instance"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "New Query",
+                  "sparklineDisplaySubLabel": "Disk Free"
+                },
+                "dashboardLayout": {
+                  "h": 5,
+                  "w": 6,
+                  "x": 0,
+                  "y": 10
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "Primary Disk Free %",
+                  "query": "ts(\"win.disk.Percent.Free.Space\", instance=\"C:\", source=\"${host}\" AND dc=\"sg\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                },
+                {
+                  "name": "Primary Disk Free GB",
+                  "query": "ts(\"win.disk.Free.Megabytes\", instance=\"C:\", source=\"${host}\" AND dc=\"sg\") * 1000 * 1000",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "LAST",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            },
+            {
+              "base": 0,
+              "units": "",
+              "name": "Primary (\"C\") Disk Free %",
+              "description": "Total Disk Used for Host",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "table",
+                "customTags": [
+                  "instance"
+                ],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": false,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "custom",
+                "numTags": 4,
+                "groupBySource": false,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "timeBasedColoring": false,
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayColor": "rgba(255,255,255,1)",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BOTTOM",
+                "sparklineLineColor": "rgba(56,160,244,1)",
+                "sparklineValueColorMapColors": [
+                  "rgba(6,163,11,1)",
+                  "rgba(255,163,28,1)",
+                  "rgba(242,34,34,1)"
+                ],
+                "sparklineValueColorMapValuesV2": [
+                  50,
+                  70
+                ],
+                "sparklineValueColorMapApplyTo": "TEXT",
+                "sparklineDecimalPrecision": 0,
+                "sparklineValueTextMapText": [
+                  "new highest"
+                ]
+              },
+              "chartAttributes": {
+                "topK": {
+                  "labelBy": []
+                },
+                "lineFill": 1,
+                "colorMap": {
+                  "colors": [
+                    "#d9534f",
+                    "#ffa31c",
+                    "#86c042"
+                  ],
+                  "values": [
+                    10,
+                    20
+                  ]
+                },
+                "singleStat": {
+                  "commaDelimited": false,
+                  "sparklineDisplayLabel": "New Query",
+                  "sparklineDisplaySubLabel": "Disk Free"
+                },
+                "dashboardLayout": {
+                  "h": 5,
+                  "w": 6,
+                  "x": 6,
+                  "y": 10
+                },
+                "y0ScaleDecimal": true
+              },
+              "sources": [
+                {
+                  "name": "Disk Space",
+                  "query": "ts(\"win.disk.Percent.Free.Space\", dc=\"sg\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "LAST",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        },
+        {
+          "heightFactor": 100,
+          "charts": [
+            {
+              "base": 0,
+              "units": "",
+              "name": "Net Traffic",
+              "includeObsoleteMetrics": false,
+              "chartSettings": {
+                "type": "line",
+                "customTags": [
+                  "objectname"
+                ],
+                "fixedLegendEnabled": false,
+                "fixedLegendUseRawStats": false,
+                "lineType": "linear",
+                "stackType": "zero",
+                "windowing": "full",
+                "showHosts": true,
+                "showLabels": true,
+                "showRawValues": false,
+                "showValueColumn": true,
+                "autoColumnTags": false,
+                "tagMode": "custom",
+                "numTags": 4,
+                "groupBySource": true,
+                "sortValuesDescending": true,
+                "y1Units": "",
+                "y0ScaleSIBy1024": false,
+                "y1ScaleSIBy1024": false,
+                "y0UnitAutoscaling": false,
+                "y1UnitAutoscaling": false,
+                "fixedLegendPosition": "RIGHT",
+                "fixedLegendDisplayStats": [
+                  "CURRENT"
+                ],
+                "fixedLegendFilterSort": "TOP",
+                "fixedLegendShowSourceName": true,
+                "fixedLegendShowMetricName": false,
+                "fixedLegendFilterLimit": 5,
+                "fixedLegendFilterField": "CURRENT",
+                "sparklineDisplayValueType": "VALUE",
+                "sparklineDisplayHorizontalPosition": "MIDDLE",
+                "sparklineDisplayFontSize": "100",
+                "sparklineSize": "BACKGROUND",
+                "sparklineValueColorMapApplyTo": "TEXT"
+              },
+              "chartAttributes": {
+                "decimalPrecision": 0,
+                "topK": {
+                  "labelBy": [
+                    "source"
+                  ]
+                },
+                "lineFill": 1,
+                "singleStat": {
+                  "sparklineDisplayLabel": "Query",
+                  "sparklineDisplaySubLabel": "\"tcpv4.Connections.Established\""
+                },
+                "dashboardLayout": {
+                  "h": 5,
+                  "w": 12,
+                  "x": 0,
+                  "y": 15
+                },
+                "y0ScaleDecimal": false
+              },
+              "sources": [
+                {
+                  "name": "Bytes Sent",
+                  "query": "ts(\"win.net.Bytes.Sent.persec\", source=\"${host}\" AND dc=\"sg\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                },
+                {
+                  "name": "Bytes Received",
+                  "query": "ts(\"win.net.Bytes.Received.persec\", source=\"${host}\" AND dc=\"sg\")",
+                  "disabled": false,
+                  "secondaryAxis": false,
+                  "queryType": "WQL",
+                  "querybuilderEnabled": false,
+                  "sourceDescription": ""
+                }
+              ],
+              "noDefaultEvents": false,
+              "interpolatePoints": false,
+              "summarization": "SUM",
+              "anomalyDetectionOn": false,
+              "filterOutNonAnomalies": false,
+              "displayConfidenceBounds": false,
+              "anomalySampleSize": "8",
+              "anomalyType": "both",
+              "anomalySeverity": "medium"
+            }
+          ]
+        }
+      ],
+      "sectionFilter": null
+    }
+  ],
+  "parameterDetails": {
+    "host": {
+      "defaultValue": "Label",
+      "label": "Server",
+      "parameterType": "DYNAMIC",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "allowAll": true,
+      "dynamicFieldType": "SOURCE",
+      "queryValue": "ts(win.disk.Free.Megabytes and vpc=wfautsg)",
+      "hideFromView": false,
+      "tagKey": "",
+      "reverseDynSort": false,
+      "order": 2,
+      "tagsBlackListRegex": ""
+    },
+    "Assist Data Center": {
+      "defaultValue": "Label",
+      "label": "Assist Data Center",
+      "parameterType": "DYNAMIC",
+      "valuesToReadableStrings": {
+        "Label": "*"
+      },
+      "allowAll": true,
+      "dynamicFieldType": "TAG_KEY",
+      "queryValue": "ts(win.cpu.Percent.Idle.Time and vpc=wfautsg)",
+      "hideFromView": false,
+      "tagKey": "dc",
+      "reverseDynSort": false,
+      "valueOrdering": [
+        "sg"
+      ],
+      "order": 1,
+      "tagsBlackListRegex": ""
+    }
+  },
+  "disableRefreshInLiveMode": false,
+  "displayDescription": false,
+  "displaySectionTableOfContents": true,
+  "displayQueryParameters": true,
+  "creatorId": "rnathan+vmware@vmware.com",
+  "updaterId": "rnathan+vmware@vmware.com",
+  "orphan": false,
+  "systemOwned": false,
+  "createdEpochMillis": 1653916328436,
+  "updatedEpochMillis": 1653916328436,
+  "deleted": false,
+  "numCharts": 9,
+  "numFavorites": 1,
+  "favorite": true
+}
